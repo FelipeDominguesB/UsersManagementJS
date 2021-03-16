@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "windowsForm", "windowsForm\windowsForm.csproj", "{3612AFA6-7B0A-4680-B414-BD6D1532CDF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTestConsole", "ApiTestConsole\ApiTestConsole.csproj", "{71462B7F-F4CC-4922-A282-5ECAE04EFDB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3612AFA6-7B0A-4680-B414-BD6D1532CDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3612AFA6-7B0A-4680-B414-BD6D1532CDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3612AFA6-7B0A-4680-B414-BD6D1532CDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3612AFA6-7B0A-4680-B414-BD6D1532CDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71462B7F-F4CC-4922-A282-5ECAE04EFDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71462B7F-F4CC-4922-A282-5ECAE04EFDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71462B7F-F4CC-4922-A282-5ECAE04EFDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71462B7F-F4CC-4922-A282-5ECAE04EFDB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E99B2A65-F77F-47CF-8D35-17F2F4D07320}
+	EndGlobalSection
+EndGlobal
