@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace windowsForm
 {
     public partial class Form1 : Form
@@ -18,28 +20,37 @@ namespace windowsForm
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-            makeRequest();
+            await makeRequest();
+            
         }
-
-        static async Task makeRequest()
+        
+        private async Task makeRequest()
         {
+           
             try
             {
-                HttpResponseMessage response = await client.GetAsync("http://localhost.com:3000");
+                HttpResponseMessage response = await client.GetAsync("http://localhost:3000");
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                // Above three lines can be replaced with new helper method below
-                // string responseBody = await client.GetStringAsync(uri);
+                
 
-                Console.WriteLine(responseBody);
+                var dados = JsonSerializer.Deserialize<User>(responseBody);
+                
+
+                dataGridView1.DataSource = dados;
             }
             catch (HttpRequestException e)
             {
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
