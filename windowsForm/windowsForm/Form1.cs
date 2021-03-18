@@ -20,15 +20,14 @@ namespace windowsForm
             InitializeComponent();
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            await makeRequest();
+            
             
         }
         
         private async Task makeRequest()
         {
-           
             try
             {
                 HttpResponseMessage response = await client.GetAsync("http://localhost:3000");
@@ -36,21 +35,31 @@ namespace windowsForm
                 string responseBody = await response.Content.ReadAsStringAsync();
                 
 
-                var dados = JsonSerializer.Deserialize<User>(responseBody);
+                List<User> usuarios = JsonSerializer.Deserialize<List<User>>(responseBody);
                 
 
-                dataGridView1.DataSource = dados;
+                FormUsers.DataSource = usuarios;
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                MessageBox.Show(e.Message, "Erro fatal!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnLoad_Click(object sender, EventArgs e)
+        {
+            await makeRequest();
         }
     }
 }
