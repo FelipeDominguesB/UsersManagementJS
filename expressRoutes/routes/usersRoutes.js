@@ -1,35 +1,49 @@
-const e = require('express');
 const express = require('express');
 const router = express.Router();
-const User = require('../members.js');
+const neDB = require('nedb');
 
+let db = new neDB
+(
+    {
+        filename: 'banco.db',
+        autoload: true
+    }
+);
 
 router.get('/', (req, res)=>{
-    console.log('Fui acessado');
-    res.json(User);
+
+    let User;
+    db.find({}, function (err, usuarios) {
+        if(err)return console.log(err);
+        res.status(200).json(usuarios);
+    });
 });
 
 router.post('/', (req, res)=>{
    
-    let status = req.body.ativo == 'true' ? true : false
+    
 
-    try{
+    try
+    {
         if(!req.body.nome || !req.body.email || !req.body.idade) throw "Argumentos insuficientes";
 
         if(isNaN(req.body.idade)) throw 'Informe a idade apenas em números';
-
-        const newUser = {
-
+        
+        var usuario = {
             nome: req.body.nome,
-            email: req.body.email,
             idade: parseInt(req.body.idade),
-            ativo: status
-        }
-        User.push(newUser);
-        res.status(200).json(
-        {
-            msg: 'Enviado com sucesso',
-            User
+            email: req.body.email,
+            ativo: req.body.ativo == 'true' ? true : false
+        };
+
+        db.insert(usuario, (err) => {
+            if(err) throw 'Erro ao inserir no banco de dados';
+            res.status(200).json(
+            {
+                msg: 'Enviado com sucesso',
+                usuario
+            });
+
         });
     }
     catch(e)
