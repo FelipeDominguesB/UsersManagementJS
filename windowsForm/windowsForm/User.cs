@@ -13,6 +13,8 @@ namespace windowsForm
         public int idade { get; set; }
 
         public bool ativo { get; set; }
+
+        public string _id { get; set; }
     }
 
 }
