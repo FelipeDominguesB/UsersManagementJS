@@ -20,9 +20,6 @@ router.get('/', (req, res)=>{
 });
 
 router.post('/', (req, res)=>{
-   
-    
-
     try
     {
         if(!req.body.nome || !req.body.email || !req.body.idade) throw "Argumentos insuficientes";
@@ -53,9 +50,7 @@ router.post('/', (req, res)=>{
                 msg: e
             }
         );
-    }
-    
-    
+    }  
 });
 
 module.exports = router;
