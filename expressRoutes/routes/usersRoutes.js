@@ -11,10 +11,14 @@ let db = new neDB
 );
 
 router.get('/', (req, res)=>{
-
+    res.setHeader('Content-type', 'application/json');
     let User;
     db.find({}, function (err, usuarios) {
+        
         if(err)return console.log(err);
+
+        console.log('Request host: ', req.hostname);
+        console.log('Request IP: ', req.ip);
         res.status(200).json(usuarios);
     });
 });

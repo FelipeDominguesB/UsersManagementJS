@@ -1,4 +1,4 @@
-class GetInformation{
+class getInformation{
     constructor()
     {
         console.log('Classe get information construida');
@@ -7,13 +7,22 @@ class GetInformation{
 
     getData()
     {
-        const Http = new XMLHttpRequest();
-        const url='https://localhost:3000';
-        Http.open("GET", url);
-        Http.send();
+        let request = new XMLHttpRequest();
 
-        Http.onload= (e) => {
-        console.log(Http.responseText)
+        request.open('GET', 'http://localhost:3000/');
+        request.send();
+
+        request.onload = ()=>{
+            console.log(request);
+
+            if(request.status===200)
+            {
+                console.log(JSON.parse(request.response));
+            }
+            else
+            {
+                console.log(request.statusText);
+            }
         }
     }
 }

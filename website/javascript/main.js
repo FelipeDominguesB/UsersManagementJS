@@ -1,1 +1,1 @@
-const getInformation = new GetInformation();
+let getInform = new getInformation();
