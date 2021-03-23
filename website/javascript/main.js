@@ -1,0 +1,1 @@
+const getInformation = new GetInformation();
