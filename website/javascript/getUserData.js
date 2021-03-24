@@ -1,7 +1,7 @@
-class getInformation{
+class getUserData{
     constructor()
     {
-        console.log('Classe get information construida');
+        console.log('Classe getUserData construida');
         this.getData();
     }
 

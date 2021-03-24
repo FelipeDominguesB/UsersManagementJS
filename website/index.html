@@ -12,13 +12,35 @@
 <body>
     
 
-    <div class="header">
-        <a href="">Home</a>
-        <a href="">Listar funcionários</a>
-        <a href="">Adicionar funcionários</a>
+    <div class="header bg-dark">
+        <a href="#" id="homeButton">Home</a>
+        <a href="#" id="listButton">Listar funcionários</a>
+        <a href="#" id="addButton">Adicionar funcionários</a>
     </div>
     <div class="container">
-        <form>
+
+        <div id='homeContent'>
+            <div  class="row">
+                <div class="col-md-6 order-md-1">
+                    <img class="img-fluid mx-auto" src="https://www.skaditoys.com/wp-content/uploads/2020/10/f3f1854cfb4396133e1ee78a435ac486.jpg" style="height: 500px; width: 500px;">
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <h1>The Trapper</h1>
+                    <p class="text-justify trapperText">
+                        The Trapper is an area-control Killer, able to apply pressure across the Map by placing deadly Bear Traps for Survivors to step into.
+                        <hr class="featurette-divider">
+                        His personal Perks, Unnerving Presence, Brutal Strength, and Agitation, allow him to chase and carry Survivors more effectively.
+                        <hr class="featurette-divider">
+                        He is focused on physical attributes and making use of his strength and the Survivors' fear.
+                        <hr class="featurette-divider">
+                        Difficulty rating: Easy
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+        <form id="formSend" class="border rounded invisible">
             <h1>Formulário de envio</h1>
             <div class="form-group">
                 <label for="nameInput">Nome do funcionário</label>
@@ -35,9 +57,38 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
             <button type="submit" class="btn btn-danger">Resetar</button>
         </form>
+
+        <table id="tableUsers" class="table border rounded invisible">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Ativo</th>
+                    <th scope="col">Ações</th>
+                    
+                </tr>
+                
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Shigeru Miyamoto</td>
+                    <td>shigerumiyamoto@gmail.com</td>
+                    <td>45 anos</td>
+                    <td>Ativo na empresa</td>
+                    <td>
+                        <button class="btn-primary">Editar</button>
+                        <button class="btn-danger">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
     
-    <script src='javascript/getInformation.js'></script>
+    <script src='javascript/getUserData.js'></script>
+    <script src='javascript/webSiteControl.js'></script>
     <script src='javascript/main.js'></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

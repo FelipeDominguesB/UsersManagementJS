@@ -1,15 +1,24 @@
 .header{
-    background-color: grey;
+    
     overflow: hidden;
 }
 
+
+.invisible{
+
+    display: none;
+}
+
+
 .header a{
-    text-decoration: none;
+    
+    
     padding: 10px 10px;
     font-size: 18px;
     text-align: center;
     color: honeydew;
     float: left;
+    text-decoration: none;
 }
 
 .header a:hover{
@@ -17,15 +26,24 @@
     background-color: honeydew;
     border: black;
     border-width: 1px;
+    text-decoration: none;
 }
 
 
-form{
+form, table{
+    margin-top: 20px;
     padding: 20px;
     border: black;
     border-width: 3px;
+    
 }
 
+.trapperText{
+    font-size: 24px;
+}
+#homeContent{
+    margin-top: 20px;
+}
 form h1{
     text-align: center;
 }

@@ -1,1 +1,1 @@
-let getInform = new getInformation();
+let websiteControl = new webSiteControl();
